@@ -6,9 +6,6 @@
 //  Copyright (c) 2015 SENDBIRD.COM. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <CoreGraphics/CoreGraphics.h>
-
 // In this header, you should import all the public headers of your framework using statements like #import "PublicHeader"
 // v3.0
 #import "SBDMain.h"
@@ -35,6 +32,7 @@
 #import "SBDBaseMessageParams.h"
 #import "SBDUserMessageParams.h"
 #import "SBDFileMessageParams.h"
+#import "SBDMessageMetaArray.h"
 
 #import "SBDUserListQuery.h"
 #import "SBDOpenChannelListQuery.h"

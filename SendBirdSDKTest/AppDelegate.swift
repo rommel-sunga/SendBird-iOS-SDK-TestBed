@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             // Create Empty Channel
-            /*SBDGroupChannel.createChannel(withUserIds: [self.test_user_name], isDistinct: true) { (groupChannel, error) in
+            /*SBDGroupChannel.createChannel(withUserIds: [self.test_user_name], isDistinct: false) { (groupChannel, error) in
                 guard error == nil else {   // Error.
                     print("Error Creating Channel")
                     return
@@ -36,18 +36,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 guard let params = SBDUserMessageParams(message: "test") else { return }
                 
-                groupChannel?.sendUserMessage(with: params, completionHandler: { (userMessage, error) in
+                /*groupChannel?.sendUserMessage(with: params, completionHandler: { (userMessage, error) in
                     guard error == nil else {   // Error.
                         print("Error Sending Message")
                         return
                     }
-                })
+                })*/
                 
             }*/
             
             
             let query = SBDGroupChannel.createMyGroupChannelListQuery()
-            query?.includeEmptyChannel = true
+            query?.includeEmptyChannel = false
             query?.order = .latestLastMessage
             query?.limit = 15
             

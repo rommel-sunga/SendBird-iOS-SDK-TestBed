@@ -113,6 +113,8 @@ typedef NS_ENUM(NSInteger, SBDErrorCode) {
     SBDErrorFileUploadCancelFailed = 800230,
     SBDErrorFileUploadCancelled = 800240,
 	SBDErrorFileUploadTimeout = 800250,
+    SBDErrorTimerWasExpired = 800301,
+    SBDErrorTimerWasAlreadyDone = 800302,
 };
 
 /**
@@ -133,8 +135,9 @@ typedef NS_ENUM(NSUInteger, SBDWebSocketConnectionState) {
     SBDWebSocketClosed = 3,
     /**
      *  Closing
+     *  @deprecated Has been replaced by SBDWebSocketClosed
      */
-    SBDWebSocketClosing __attribute__((deprecated)) = SBDWebSocketClosed,
+    SBDWebSocketClosing DEPRECATED_ATTRIBUTE = SBDWebSocketClosed,
 };
 
 /**
@@ -559,7 +562,6 @@ typedef NS_ENUM(NSUInteger, SBDGroupChannelPushTriggerOption) {
  
  @since 3.0.134
  */
-
 typedef NS_ENUM(NSUInteger, SBDPushTokenType) {
     SBDPushTokenTypeNone = 0,
     SBDPushTokenTypeGCM,
@@ -567,5 +569,51 @@ typedef NS_ENUM(NSUInteger, SBDPushTokenType) {
     SBDPushTokenTypeAPNSVoIP,
 };
 
+/**
+ Constants of type to describe message's request state
+ 
+ - SBDMessageRequestStateNone: MUST NOT BE. If you got a message instance from SDK, the message can't have this value.
+ - SBDMessageRequestStatePending: Indicates the state of the message returned when trying to send a message. The message with the pending state means that is not dispatched completely to the SendBird server. The pending message should be replaced with a message (failed or succeeded) from the callback.
+ - SBDMessageRequestStateFailed: Indicates the state of the message that failed to send the message.
+ - SBDMessageRequestStateSucceeded: Indicates the state of the message that success to send the message.
+ 
+ @since 3.0.141
+ */
+typedef NS_ENUM(NSUInteger, SBDMessageRequestState) {
+    SBDMessageRequestStateNone = 0,
+    SBDMessageRequestStatePending,
+    SBDMessageRequestStateFailed,
+    SBDMessageRequestStateSucceeded,
+};
+
+/**
+ Filter types to query with `SBDGroupChannelListQuery`. You can combine search fields to query.
+ @see used for -setSearchFilter:fields: of `SBDGroupChannelListQuery`
+ @since 3.0.144
+ */
+typedef NS_OPTIONS(NSUInteger, SBDGroupChannelListQuerySearchField) {
+    /* filter type to query for member nickname */
+    SBDGroupChannelListQuerySearchFieldMemberNickname   = (1 << 0),
+    /* filter type to query for member nickname */
+    SBDGroupChannelListQuerySearchFieldChannelName      = (1 << 1),
+};
+
+
+/**
+ Categories of reporting reasons
+ 
+ - SBDReportCategorySuspicious: Report suspicious content
+ - SBDReportCategoryHarassing: Report harassing content.
+ - SBDReportCategorySpam: Report spam content
+ - SBDReportCategoryInappropriate: Report inappropriate content
+ 
+ @since 3.0.154
+ */
+typedef NS_ENUM(NSUInteger, SBDReportCategory) {
+    SBDReportCategorySuspicious = 0,
+    SBDReportCategoryHarassing,
+    SBDReportCategorySpam,
+    SBDReportCategoryInappropriate,
+};
 
 #endif /* SBDTypes_h */

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "SBDUser.h"
 #import "SBDBaseChannel.h"
 #import "SBDGroupChannel.h"
@@ -342,7 +341,6 @@ typedef void(^SBDBackgroundSessionBlock)(void);
  *
  *  - `SBDWebSocketConnecting` - Connecting to the chat server
  *  - `SBDWebSocketOpen` - Connected to the chat server
- *  - `SBDWebSocketClosing` - Disconnecting from the chat server
  *  - `SBSWebSocketClosed` - Disconnected from the chat server
  */
 + (SBDWebSocketConnectionState)getConnectState;
@@ -442,6 +440,15 @@ typedef void(^SBDBackgroundSessionBlock)(void);
                      profileImageFilePath:(NSString * _Nullable)profileImageFilePath
                           progressHandler:(nullable void (^)(int64_t bytesSent, int64_t totalBytesSent, int64_t totalBytesExpectedToSend))progressHandler
                         completionHandler:(nullable void (^)(SBDError * _Nullable error))completionHandler;
+
+/**
+ *  Updates the current user's preferred languages
+ *
+ *  @param preferredLanguages   New array of preferred languages
+ *  @param completionHandler    The handler block to execute.
+ */
++ (void)updateCurrentUserInfoWithPreferredLanguages:(nonnull NSArray<NSString *> *)preferredLanguages
+                                  completionHandler:(nullable SBDErrorHandler)completionHandler;
 
 #pragma mark - push token
 /**

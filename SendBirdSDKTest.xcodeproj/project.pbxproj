@@ -12,9 +12,11 @@
 		597F546B22D81AFA008540D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597F546922D81AFA008540D8 /* Main.storyboard */; };
 		597F546D22D81AFC008540D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597F546C22D81AFC008540D8 /* Assets.xcassets */; };
 		597F547022D81AFC008540D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597F546E22D81AFC008540D8 /* LaunchScreen.storyboard */; };
+		60D932C47DCE81739BD46376 /* Pods_SendBirdSDKTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F43612627ADD6D491450DD1 /* Pods_SendBirdSDKTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F43612627ADD6D491450DD1 /* Pods_SendBirdSDKTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendBirdSDKTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597F546222D81AFA008540D8 /* SendBirdSDKTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SendBirdSDKTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		597F546522D81AFA008540D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		597F546722D81AFA008540D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60D932C47DCE81739BD46376 /* Pods_SendBirdSDKTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +83,7 @@
 		D1290F011400CAB7F1C0B048 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F43612627ADD6D491450DD1 /* Pods_SendBirdSDKTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
